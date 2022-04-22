@@ -192,6 +192,9 @@ jobs:
            -SpellCheckPublicApiSurface
           pwsh: true
           failOnStderr: false
+      - pwsh: |
+          git clean -xfd
+        workingDirectory: $(Build.SourcesDirectory)
       - script: >-
           dotnet build eng/service.proj -warnaserror
           /t:rebuild
